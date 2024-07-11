@@ -7,6 +7,3 @@ import SolarSystemScene from './components/solarSystemScene.vue';
         <SolarSystemScene></SolarSystemScene>
     </div>
 </template>
-
-<style scoped>
-</style>
