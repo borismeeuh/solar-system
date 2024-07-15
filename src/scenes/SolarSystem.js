@@ -4,7 +4,7 @@ const createScene = (canvas) => {
     const engine = new BABYLON.Engine(canvas);
 
     const scene = new BABYLON.Scene(engine);
-    scene.clearColor = BABYLON.Color3.Black()
+    scene.clearColor = BABYLON.Color3.Black();
 
     const sunLight = new BABYLON.DirectionalLight(
         'SunLight',
@@ -28,8 +28,8 @@ const createScene = (canvas) => {
 
     engine.runRenderLoop(() => {
         scene.render();
-        sun.rotation.y = sun.rotation.y + .001;
-        console.log(camera.position)
+        sun.rotation.y = sun.rotation.y + 0.001;
+        console.log(camera.position);
     });
 
     window.addEventListener('resize', () => {
@@ -49,7 +49,7 @@ const createScene = (canvas) => {
         camera.radius = 25;
         camera.wheelPrecision = 5;
         camera.position = new BABYLON.Vector3(-74, 20, -50);
-        }
+    }
 
     function createSun() {
         sun = BABYLON.MeshBuilder.CreateSphere('sun', { diameter: 15 }, scene);
