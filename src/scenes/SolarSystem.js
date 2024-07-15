@@ -48,7 +48,7 @@ const createScene = (canvas) => {
         camera.attachControl(canvas.value, true);
         camera.radius = 25;
         camera.wheelPrecision = 5;
-        camera.position = new BABYLON.Vector3(-74, 20, -81);
+        camera.position = new BABYLON.Vector3(-74, 20, -50);
         }
 
     function createSun() {
