@@ -2,7 +2,10 @@ import * as BABYLON from '@babylonjs/core';
 
 const createScene = (canvas) => {
     const engine = new BABYLON.Engine(canvas);
+
     const scene = new BABYLON.Scene(engine);
+    scene.clearColor = BABYLON.Color3.Black()
+
     const sunLight = new BABYLON.DirectionalLight(
         'SunLight',
         new BABYLON.Vector3(1, 0, 0),
@@ -10,6 +13,7 @@ const createScene = (canvas) => {
     );
 
     let camera;
+    let sun;
 
     makeCamera();
     createSun();
@@ -24,6 +28,8 @@ const createScene = (canvas) => {
 
     engine.runRenderLoop(() => {
         scene.render();
+        sun.rotation.y = sun.rotation.y + .001;
+        console.log(camera.position)
     });
 
     window.addEventListener('resize', () => {
@@ -42,15 +48,11 @@ const createScene = (canvas) => {
         camera.attachControl(canvas.value, true);
         camera.radius = 25;
         camera.wheelPrecision = 5;
-        camera.position = new BABYLON.Vector3(-23.76, 0.06, 8.06);
-    }
+        camera.position = new BABYLON.Vector3(-74, 20, -81);
+        }
 
     function createSun() {
-        const sun = BABYLON.MeshBuilder.CreateSphere(
-            'sun',
-            { diameter: 15 },
-            scene
-        );
+        sun = BABYLON.MeshBuilder.CreateSphere('sun', { diameter: 15 }, scene);
 
         const sunMaterial = new BABYLON.StandardMaterial('sunMaterial', scene);
         sunMaterial.emissiveColor = new BABYLON.Color3(1, 0.5, 0);
