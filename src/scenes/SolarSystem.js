@@ -1,5 +1,15 @@
 import * as BABYLON from '@babylonjs/core';
 
+import sunTexture from '../textures/sun.jpg';
+import mercuryTexture from '../textures/mercury.jpg';
+import venusTexture from '../textures/venus.jpg';
+import earthTexture from '../textures/earth.jpg';
+import marsTexture from '../textures/mars.jpg';
+import jupiterTexture from '../textures/jupiter.jpg';
+import saturnTexture from '../textures/saturn.jpg';
+import uranusTexture from '../textures/uranus.jpg';
+import neptuneTexture from '../textures/neptune.jpg';
+
 const createScene = (canvas) => {
     const engine = new BABYLON.Engine(canvas);
 
@@ -57,10 +67,7 @@ const createScene = (canvas) => {
         const sunMaterial = new BABYLON.StandardMaterial('sunMaterial', scene);
         sunMaterial.emissiveColor = new BABYLON.Color3(1, 0.5, 0);
         sunMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-        sunMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/sun.jpg',
-            scene
-        );
+        sunMaterial.diffuseTexture = new BABYLON.Texture(sunTexture, scene);
         sun.material = sunMaterial;
 
         let sunlight = new BABYLON.GlowLayer('sunlight', scene);
@@ -80,7 +87,7 @@ const createScene = (canvas) => {
             scene
         );
         mercuryMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/mercury.jpg',
+            mercuryTexture,
             scene
         );
         mercuryMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -101,7 +108,7 @@ const createScene = (canvas) => {
             scene
         );
         venusMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/venus.jpg',
+            venusTexture,
             scene
         );
         venusMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -122,7 +129,7 @@ const createScene = (canvas) => {
             scene
         );
         earthMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/earth.jpg',
+            earthTexture,
             scene
         );
         earthMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -139,7 +146,7 @@ const createScene = (canvas) => {
             scene
         );
         marsMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/mars.jpg',
+            marsTexture,
             scene
         );
         marsMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -160,7 +167,7 @@ const createScene = (canvas) => {
             scene
         );
         jupiterMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/jupiter.jpg',
+            jupiterTexture,
             scene
         );
         jupiterMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -181,7 +188,7 @@ const createScene = (canvas) => {
             scene
         );
         saturnMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/saturn.jpg',
+            saturnTexture,
             scene
         );
         saturnMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -202,7 +209,7 @@ const createScene = (canvas) => {
             scene
         );
         uranusMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/uranus.jpg',
+            uranusTexture,
             scene
         );
         uranusMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
@@ -223,7 +230,7 @@ const createScene = (canvas) => {
             scene
         );
         neptuneMaterial.diffuseTexture = new BABYLON.Texture(
-            'src/textures/neptune.jpg',
+            neptuneTexture,
             scene
         );
         neptuneMaterial.emissiveColor = new BABYLON.Color3(0.1, 0.1, 0.1);
